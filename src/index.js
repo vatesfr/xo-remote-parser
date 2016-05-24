@@ -1,6 +1,7 @@
 import filter from 'lodash.filter'
 import map from 'lodash.map'
 import trim from 'lodash.trim'
+import trimStart from 'lodash.trimstart'
 
 const sanitizePath = (...paths) => filter(map(paths, s => s && filter(map(s.split('/'), trim)).join('/'))).join('/')
 
@@ -8,7 +9,7 @@ export const parse = (remote) => {
   const [type, rest] = remote.url.split('://')
   if (type === 'file') {
     remote.type = 'local'
-    remote.path = `/${rest}` // FIXME the heading slash has been forgotten on client side first implementation
+    remote.path = `/${trimStart(rest, '/')}` // the heading slash has been forgotten on client side first implementation
   } else if (type === 'nfs') {
     remote.type = 'nfs'
     const [host, share] = rest.split(':')
@@ -43,7 +44,7 @@ export const format = ({type, host, path, username, password, domain}) => {
     path = path.split('/')
     path = '\0' + path.join('\\') // FIXME saving with the windows fashion \ was a bad idea :,(
   } else {
-    type === 'smb' && (path = `/${path}`) // FIXME file type should have a / too, but it has been forgotten on client side first implementation...
+    type === 'file' && (path = `/${path}`)
   }
   url += path
   return url
