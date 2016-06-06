@@ -10,7 +10,7 @@ export const parse = url => {
     url = url.url
   }
 
-  const remote = {}
+  const remote = {url}
 
   const [type, rest] = url.split('://')
   if (type === 'file') {
@@ -38,7 +38,6 @@ export const parse = url => {
     remote.username = username
     remote.password = password
   }
-  remote.url = url
   return remote
 }
 
