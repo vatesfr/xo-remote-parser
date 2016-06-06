@@ -38,7 +38,6 @@ export const parse = url => {
     remote.username = username
     remote.password = password
   }
-  remote.url = url
   return remote
 }
 
