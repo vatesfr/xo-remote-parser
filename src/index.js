@@ -24,9 +24,9 @@ export const parse = url => {
     remote.share = share
   } else if (type === 'smb') {
     remote.type = 'smb'
-    const lastArobas = rest.lastIndexOf('@')
-    const smb = rest.slice(lastArobas + 1)
-    const auth = rest.slice(0, lastArobas)
+    const lastAtSign = rest.lastIndexOf('@')
+    const smb = rest.slice(lastAtSign + 1)
+    const auth = rest.slice(0, lastAtSign)
     const firstColon = auth.indexOf(':')
     const username = auth.slice(0, firstColon)
     const password = auth.slice(firstColon + 1)
