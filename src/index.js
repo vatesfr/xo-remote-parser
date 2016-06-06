@@ -25,11 +25,11 @@ export const parse = url => {
   } else if (type === 'smb') {
     remote.type = 'smb'
     const lastArobas = rest.lastIndexOf('@')
-    const smb = rest.slice(lastArobas)
+    const smb = rest.slice(lastArobas + 1)
     const auth = rest.slice(0, lastArobas)
     const firstColon = auth.indexOf(':')
     const username = auth.slice(0, firstColon)
-    const password = auth.slice(firstColon)
+    const password = auth.slice(firstColon + 1)
     const [domain, sh] = smb.split('\\\\')
     const [host, path] = sh.split('\0')
     remote.host = host
@@ -38,6 +38,7 @@ export const parse = url => {
     remote.username = username
     remote.password = password
   }
+  remote.url = url
   return remote
 }
 
