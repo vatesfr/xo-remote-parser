@@ -24,9 +24,7 @@
     "node": ">=0.12"
   },
   "dependencies": {
-    "lodash.filter": "^4.0.1",
-    "lodash.map": "^4.0.1",
-    "lodash.trim": "^4.0.1"
+    "lodash": "^4.13.1"
   },
   "devDependencies": {
     "babel-cli": "^6.3.17",
@@ -36,10 +34,6 @@
     "clarify": "^1.0.5",
     "dependency-check": "^2.5.1",
     "ghooks": "^1.2.1",
-    "lodash.filter": "^4.0.1",
-    "lodash.map": "^4.0.1",
-    "lodash.trim": "^4.0.1",
-    "lodash.trimstart": "^4.4.0",
     "mocha": "^2.3.4",
     "must": "^0.13.1",
     "nyc": "^6.4.4",
