@@ -68,7 +68,7 @@ describe('format', () => {
   for (const name in formatData) {
     const datum = formatData[name]
     it(name, () => {
-      expect(format(datum.out)).to.equal(datum.url)
+      expect(format({...datum.out})).to.equal(datum.url)
     })
   }
 })
@@ -77,7 +77,7 @@ describe('parse', () => {
   for (const name in parseData) {
     const datum = parseData[name]
     it(name, () => {
-      expect(parse(datum.in)).to.eql(datum.out)
+      expect(parse({...datum.in})).to.eql(datum.out)
     })
   }
 })
