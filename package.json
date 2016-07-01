@@ -35,7 +35,7 @@
     "deep-freeze": "0.0.1",
     "dependency-check": "^2.5.1",
     "ghooks": "^1.2.1",
-    "mocha": "^2.3.4",
+    "mocha": "^2.5.0",
     "must": "^0.13.1",
     "nyc": "^6.4.4",
     "source-map-support": "^0.4.0",
