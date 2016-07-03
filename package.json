@@ -34,7 +34,7 @@
     "clarify": "^1.0.5",
     "deep-freeze": "0.0.1",
     "dependency-check": "^2.5.1",
-    "ghooks": "^1.2.1",
+    "ghooks": "^1.2.2",
     "mocha": "^2.3.4",
     "must": "^0.13.1",
     "nyc": "^6.4.4",
